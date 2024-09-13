@@ -351,6 +351,15 @@ app.get('/search-notes/', authenticationToken, async (req,res) => {
     }
 
 })
+
+app.get('/health', (req, res) => {
+    res.status(200).json({
+      status: 'OK',
+      message: 'Server is healthy',
+      timestamp: new Date().toISOString()
+    });
+});
+
 let port = process.env.PORT || 8000
 app.listen(port,() => {
     console.log('server started at 8000')

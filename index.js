@@ -351,8 +351,8 @@ app.get('/search-notes/', authenticationToken, async (req,res) => {
     }
 
 })
-
-app.listen(8000,() => {
+let port = process.env.PORT || 8000
+app.listen(port,() => {
     console.log('server started at 8000')
 })
 
